@@ -1,25 +1,32 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Calendar  from 'react-big-calendar';
+import moment from 'moment';
+import "react-big-calendar/lib/css/react-big-calendar.css";
 import './App.css';
 
+const localizer = Calendar.momentLocalizer(moment);
+
 class App extends Component {
+  state = {
+    events: [
+      {
+        start: new Date(),
+        end: new Date(moment().add(1, "days")),
+        title: "Erster Termin"
+      }
+    ]
+  };
+  
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <Calendar
+      localizer={localizer}
+      defaultDate={new Date()}
+      defaultView="month"
+      events={this.state.events}
+      style={{ height: "50vh", width: "50vw"}}
+    />
       </div>
     );
   }
