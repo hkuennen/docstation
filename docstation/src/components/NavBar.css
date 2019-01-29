@@ -1,0 +1,18 @@
+.nav-link {
+    text-decoration: none;
+    padding-left: 2%;
+    color: grey;
+}
+
+.nav-link:hover{
+    color: black;
+}
+
+.nav-link:active{
+    color: black;
+}
+
+
+.profile-picture{
+    float: right;
+}

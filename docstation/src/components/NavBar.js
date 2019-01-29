@@ -4,15 +4,13 @@ import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import lightBlue from '@material-ui/core/colors/lightBlue';
+
+import './NavBar.css';
 
 const styles = {
   root: {
     flexGrow: 1,
   },
-  lightBlue: {
-      color: lightBlue
-  }
 };
 
 function SimpleAppBar(props) {
@@ -25,6 +23,9 @@ function SimpleAppBar(props) {
           <Typography variant="h6" color="inherit">
             DocStation
           </Typography>
+          <a href="/" className="nav-link" active>Meine Termine</a>
+          <a href="/" className="nav-link">Konto</a>
+          <a href="/" className="nav-link">Einstellungen</a>
         </Toolbar>
       </AppBar>
     </div>

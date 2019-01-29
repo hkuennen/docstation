@@ -10,8 +10,8 @@ class DocsCalendar extends Component {
     events: [
       {
         start: new Date(),
-        end: new Date(moment().add(1, "days")),
-        title: "Erster Termin"
+        end: new Date(moment()),
+        title: "Sprint Planning"
       }
     ]
   };
@@ -22,9 +22,10 @@ class DocsCalendar extends Component {
         <Calendar
           localizer={localizer}
           defaultDate={new Date()}
-          defaultView="month"
+          defaultView="week"
           events={this.state.events}
           style={{ height: "50vh", width: "50vw" }}
+          className="calendar"
         />
       </div>
     );
