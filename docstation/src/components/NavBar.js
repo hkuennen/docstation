@@ -25,7 +25,7 @@ function SimpleAppBar(props) {
           </Typography>
           <a href="/" className="nav-link" active>Meine Termine</a>
           <a href="/" className="nav-link">Konto</a>
-          <a href="/" className="nav-link">Einstellungen</a>
+          <a href="/" className="nav-link">Settings</a>
         </Toolbar>
       </AppBar>
     </div>
