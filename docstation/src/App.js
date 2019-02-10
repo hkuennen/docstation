@@ -1,26 +1,39 @@
 import React, { Component } from "react";
 import NavBar from "./components/NavBar";
 import DocsCalendar from "./components/DocsCalendar";
-import Button from "@material-ui/core/Button";
-import Icon from "@material-ui/core/Icon";
+import ModalContent from './components/ModalContent';
+import Modal from "react-responsive-modal";
 import "./App.css";
 
-const styles = {
-  Button: {
-    margin: '20px'
-  }
-}
-
-
 class App extends Component {
+  state = {
+    open: false,
+    termine: {},
+  };
+
+  onOpenModal = () => {
+    this.setState({ open: true });
+  };
+
+  onCloseModal = () => {
+    this.setState({ open: false });
+  };
+
+ 
+
   render() {
     return (
       <div className="App">
         <NavBar />
         <DocsCalendar />
-        <Button variant="contained" color="primary" style={styles.Button}>
-          Termin hinzufügen 
-        </Button>
+        <button type="button" class="btn btn-outline-primary mt-4" onClick={this.onOpenModal}>
+          Termin hinzufügen
+        </button>
+        <Modal open={this.state.open} onClose={this.onCloseModal} center>
+          <ModalContent 
+            onCloseModal={this.onCloseModal}
+          />
+        </Modal>
       </div>
     );
   }
