@@ -16,6 +16,17 @@ class DocsCalendar extends Component {
     ]
   };
 
+  componentDidUpdate(){
+    //Wenn der Title string leer ist, wird kein neues Event erstellt. 
+    if(this.props.title !== ""){
+      this.state.events.push({
+        start: this.props.event[0],
+        end: this.props.event[1],
+        title: this.props.title
+      })
+    } 
+  }
+
   render() {
     return (
       <div>
