@@ -68,6 +68,20 @@ html,body{
   background-color: #EC635E;
 }
 
+.btn-danger{
+  background-color: #EC635E;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  transition: all .5s ease;
+  float: right;
+  margin-left: 3%; 
+}
+
+.btn-danger:hover{
+  background-color: #305676;
+}
+
 label{
   color: #305676;
   margin-right: 2%;
@@ -100,4 +114,8 @@ h5{
 
 .infos{
   font-size: 1em;
+}
+
+.text-input{
+  width: 80% !important;
 }

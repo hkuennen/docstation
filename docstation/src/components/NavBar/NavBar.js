@@ -1,9 +1,11 @@
 import React from "react";
 import img from "../../assets/profilepicture.jpg";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser } from '@fortawesome/free-solid-svg-icons'
-import { faCog } from '@fortawesome/free-solid-svg-icons'
-import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faCog } from '@fortawesome/free-solid-svg-icons';
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { faUserMd } from '@fortawesome/free-solid-svg-icons';
+import { faCalendar } from '@fortawesome/free-solid-svg-icons'
 import "./NavBar.css";
 
 class NavBar extends React.Component {
@@ -60,17 +62,17 @@ class NavBar extends React.Component {
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active ">
                 <a class="nav-link" href="www.google.de">
-                  Home
+                <FontAwesomeIcon icon={faUserMd} className="icon"/>&nbsp;&nbsp;Home
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/termine">
-                  Termine
+                <FontAwesomeIcon icon={faCalendar} className="icon"/>&nbsp;&nbsp;Termine
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/termine">
-                  Einstellungen
+                <FontAwesomeIcon icon={faCog} className="icon"/>&nbsp;&nbsp;Einstellungen
                 </a>
               </li>
             </ul>
