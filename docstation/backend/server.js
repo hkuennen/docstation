@@ -1,4 +1,9 @@
-var firebase = require('firebase');
+const express = require('express');
+const firebase = require('firebase');
+
+const app = express();
+
+const port = process.env.PORT || 3001;
 
 const config = {
     apiKey: "AIzaSyBVPG7xGDAMsf0QViD4zvE7aALxY_Gi718",
@@ -12,12 +17,15 @@ const config = {
 firebase.initializeApp(config);
 
 const database = firebase.database();
-const firestore = firebase.firestore();
 
 database.ref().set({
     test: "Firebase is set up!"
 });
 
-firestore.collection("collection").doc("doc").set({
-    test: "Firebase is set up!"
+app.get('/', function (req, res) {
+    res.send('<h1>Hello and welcome to the DocStation App from Express!</h1>')
+});
+
+app.listen(port, function () {
+    console.log(`Server is running on port ${port}!`);
 });
