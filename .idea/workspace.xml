@@ -1,35 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bb7df558-397b-4150-9b63-97cd59a93eb9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/docstation/backend/server.js" afterDir="false" />
+    <list default="true" id="bb7df558-397b-4150-9b63-97cd59a93eb9" name="Default Changelist" comment="Add missing frontend directory from last commit">
+      <change afterPath="$PROJECT_DIR$/docstation/frontend/.firebaserc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docstation/frontend/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docstation/frontend/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docstation/frontend/firebase.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docstation/frontend/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docstation/frontend/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docstation/frontend/public/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docstation/frontend/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docstation/frontend/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docstation/frontend/public/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docstation/frontend/src/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docstation/frontend/src/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docstation/frontend/src/App.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docstation/frontend/src/DisionDialoge.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docstation/frontend/src/assets/profilepicture.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docstation/frontend/src/components/DocsCalendar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docstation/frontend/src/components/ModalContent.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docstation/frontend/src/components/NavBar/NavBar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docstation/frontend/src/components/NavBar/NavBar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docstation/frontend/src/components/Post/Post.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docstation/frontend/src/components/Post/Post.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docstation/frontend/src/components/Termine/Termine.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docstation/frontend/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docstation/frontend/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docstation/frontend/src/serviceWorker.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docstation/.firebaserc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docstation/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docstation/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docstation/firebase.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docstation/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/docstation/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docstation/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/docstation/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docstation/public/404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docstation/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docstation/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docstation/public/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docstation/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docstation/src/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docstation/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docstation/src/DisionDialoge.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docstation/src/assets/profilepicture.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docstation/src/components/DocsCalendar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docstation/src/components/ModalContent.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docstation/src/components/NavBar/NavBar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docstation/src/components/NavBar/NavBar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docstation/src/components/Post/Post.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docstation/src/components/Post/Post.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docstation/src/components/Termine/Termine.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docstation/src/firebase.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docstation/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docstation/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docstation/src/serviceWorker.js" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -45,8 +43,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/docstation/backend/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="288">
+              <caret line="16" column="31" lean-forward="true" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -100,7 +98,7 @@
               <item name="project-wt-18-16-docstation" type="b2602c69:ProjectViewProjectNode" />
               <item name="project-wt-18-16-docstation" type="462c0819:PsiDirectoryNode" />
               <item name="docstation" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -111,6 +109,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -164,20 +163,30 @@
       <workItem from="1551434325345" duration="102000" />
       <workItem from="1551436999555" duration="4266000" />
       <workItem from="1551445609348" duration="1813000" />
-      <workItem from="1551450786274" duration="1717000" />
+      <workItem from="1551450786274" duration="2011000" />
+      <workItem from="1551452837221" duration="11000" />
+      <workItem from="1551453020656" duration="284000" />
     </task>
+    <task id="LOCAL-00001" summary="Split into frontend and backend and add Express">
+      <created>1551452637539</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1551452637539</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9019000" />
+    <option name="totallyTimeSpent" value="9608000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24917382" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" weight="0.3293011" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3293011" />
@@ -186,8 +195,8 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3293011" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.21370968" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="8" visible="true" weight="0.3293011" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.21370968" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -196,6 +205,11 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Split into frontend and backend and add Express" />
+    <MESSAGE value="Add missing frontend directory from last commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add missing frontend directory from last commit" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/docstation/.firebaserc" />
@@ -229,8 +243,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/docstation/backend/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="288">
+          <caret line="16" column="31" lean-forward="true" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
         </state>
       </provider>
     </entry>
