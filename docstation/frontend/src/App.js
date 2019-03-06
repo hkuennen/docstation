@@ -9,6 +9,9 @@ import Termine from "./components/Termine/Termine";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import "./App.css";
+import { firebase } from "./firebase";
+import LoginPage from "./components/LoginPage";
+import LogoutPage from "./components/LogoutPage";
 //import Welcome from "./components/Welcome";
 
 // const routes = (
@@ -111,9 +114,19 @@ class App extends Component {
             pushDate={this.pushDate}
           />
         </Modal>
+        <LoginPage />
+        <LogoutPage />
       </div>
     );
   }
 }
+
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    console.log('log in');
+  } else {
+    console.log('log out');
+  }
+});
 
 export default App;
