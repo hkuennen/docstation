@@ -1,12 +1,14 @@
 import React from "react";
 import img from "../../assets/profilepicture.jpg";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faSignInAlt, faUser } from '@fortawesome/free-solid-svg-icons';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { faUserMd } from '@fortawesome/free-solid-svg-icons';
 import { faCalendar } from '@fortawesome/free-solid-svg-icons'
+import { firebase, googleAuthProvider } from "../../firebase";
 import "./NavBar.css";
+import Auth from '../../components/Auth';
 
 class NavBar extends React.Component {
   constructor() {
@@ -34,20 +36,39 @@ class NavBar extends React.Component {
       },() => {
         document.removeEventListener('click', this.closeMenu);
       });
-
     }
   }
+
+  startLogin () {
+    return firebase.auth().signInWithPopup(googleAuthProvider).then(function (result) {
+      console.log(result.user.displayName);
+      let profilePic = document.querySelector('#profilePic');
+      profilePic.src = result.user.photoURL;
+    }).catch(function(error) {
+      let errorMessage = error.message;
+      console.log(errorMessage);
+    });
+  };
+
+startLogout () {
+    return firebase.auth().signOut().then(function () {
+      let profilePic = document.querySelector('#profilePic');
+      profilePic.src = img;
+    }).catch(function (error) {
+      console.log(error);
+    });
+  };
 
   render() {
     return (
       <div>
         <nav className="navbar navbar-expand-lg navbar-light">
-          <a class="navbar-brand" href="/home">
+          <a className="navbar-brand" href="/home">
             <span className="logo-left">Doc</span>
             <span className="logo-right">Station</span>
           </a>
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -55,33 +76,38 @@ class NavBar extends React.Component {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon" />
+            <span className="navbar-toggler-icon" />
           </button>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active ">
-                <a class="nav-link" href="www.google.de">
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav mr-auto">
+              <li className="nav-item active ">
+                <a className="nav-link" href="www.google.de">
                 <FontAwesomeIcon icon={faUserMd} className="icon"/>&nbsp;&nbsp;Home
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/termine">
+              <li className="nav-item">
+                <a className="nav-link" href="/termine">
                 <FontAwesomeIcon icon={faCalendar} className="icon"/>&nbsp;&nbsp;Termine
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/termine">
+              <li className="nav-item">
+                <a className="nav-link" href="/termine">
                 <FontAwesomeIcon icon={faCog} className="icon"/>&nbsp;&nbsp;Einstellungen
                 </a>
               </li>
             </ul>
+            <Auth />
             <ul className="navbar-nav ml-auto">
-              <li class="nav-item">
+              <li className="nav-item">
+                <button className="nav-link no-style" onClick={this.startLogin}><FontAwesomeIcon icon={faSignInAlt} className="icon"/>&nbsp;&nbsp;Login</button>
+              </li>
+              <li id="userAccount" className="nav-item">
                 <button className="dropdownBtn" onClick={this.showMenu}>
                   <img
+                      id="profilePic"
                     src={img}
-                    class="rounded-circle"
+                    className="rounded-circle"
                     alt="profile"
                     width="40"
                     height="40"
@@ -92,16 +118,16 @@ class NavBar extends React.Component {
           </div>
         </nav>
         {this.state.dropdownShown ? (
-          <ul class="nav flex-column dropdown" ref={(e)=>{
+          <ul className="nav flex-column dropdown" ref={(e)=>{
             this.dropdownMenu = e;}}>
-          <li class="nav-item">
-          <a class="nav-link active" href="/"><FontAwesomeIcon icon={faUser} className="icon"/>&nbsp;&nbsp;Profil</a>
+          <li className="nav-item">
+          <a className="nav-link active dropDownBtn no-style"><FontAwesomeIcon icon={faUser} className="icon"/>&nbsp;&nbsp;Profil</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/"><FontAwesomeIcon icon={faCog} className="icon"/>&nbsp;&nbsp;Einstellungen</a>
+          <li className="nav-item">
+            <a className="nav-link dropDownBtn no-style"><FontAwesomeIcon icon={faCog} className="icon"/>&nbsp;&nbsp;Einstellungen</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/"><FontAwesomeIcon icon={faSignOutAlt} className="icon"/>&nbsp;&nbsp;Logout</a>
+          <li className="nav-item">
+            <button className="nav-link dropDownBtn no-style" onClick={this.startLogout}><FontAwesomeIcon icon={faSignOutAlt} className="icon"/>&nbsp;&nbsp;Logout</button>
           </li>
         </ul>
         ) : null}

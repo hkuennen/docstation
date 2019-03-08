@@ -26,8 +26,8 @@ class ModalContent extends Component {
   
   render() {
     return (
-      <div class="container-fluid">
-        <div class="row">
+      <div className="container-fluid">
+        <div className="row">
           <h3 className="title">Fügen Sie einen neuen Termin hinzu</h3>
           <p className="subtitle">
             Wählen sie ihren Termin und bestätigen Sie diesen mit speichern.
@@ -48,7 +48,7 @@ class ModalContent extends Component {
           />
         </div>
         <div className="row">
-          <button type="button" class="btn btn-outline-primary mt-4" onClick={this.pushDate}>
+          <button type="button" className="btn btn-outline-primary mt-4" onClick={this.pushDate}>
            <FontAwesomeIcon icon={faSave}/>&nbsp;&nbsp;Speichern
           </button>
         </div>

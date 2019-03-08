@@ -70,6 +70,7 @@
 
 .dropdownBtn{
     border: none;
+    background: inherit;
 }
 
 .dropdownBtn:focus{
@@ -91,4 +92,11 @@
 
 .nav{
     border: none !important;
+}
+
+.no-style {
+    font-family: inherit;
+    border: none;
+    background: none;
+    cursor: pointer;
 }

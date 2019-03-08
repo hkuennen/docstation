@@ -1,3 +1,4 @@
+import React from 'react';
 const firebase = require('firebase');
 
 const config = {
@@ -6,16 +7,17 @@ const config = {
     databaseURL: "https://docstation-2dc9c.firebaseio.com",
     projectId: "docstation-2dc9c",
     storageBucket: "docstation-2dc9c.appspot.com",
-    messagingSenderId: "932136343711"
+    messagingSenderId: "932136343711",
+    clientId: "932136343711-ehvp963a9mkkvhsnethkosovkl5j4uja.apps.googleusercontent.com"
 };
 
 firebase.initializeApp(config);
 
 const database = firebase.database();
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+googleAuthProvider.addScope('profile');
+googleAuthProvider.addScope('email');
+googleAuthProvider.addScope('https://www.googleapis.com/auth/plus.me');
 
-database.ref().set({
-    test: "Firebase is set up!"
-});
 
-export { firebase, googleAuthProvider, database };
+export { firebase, googleAuthProvider, database }
