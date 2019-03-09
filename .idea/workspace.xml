@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bb7df558-397b-4150-9b63-97cd59a93eb9" name="Default Changelist" comment="Add login/logout functionality to Navbar">
-      <change afterPath="$PROJECT_DIR$/docstation/frontend/src/components/Auth.js" afterDir="false" />
+    <list default="true" id="bb7df558-397b-4150-9b63-97cd59a93eb9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docstation/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/docstation/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docstation/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/docstation/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docstation/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/docstation/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docstation/frontend/src/components/LoginPage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docstation/frontend/src/components/LogoutPage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docstation/frontend/src/components/ModalContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/docstation/frontend/src/components/ModalContent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docstation/frontend/src/components/Auth.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/docstation/frontend/src/components/NavBar/NavBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/docstation/frontend/src/components/NavBar/NavBar.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docstation/frontend/src/components/NavBar/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/docstation/frontend/src/components/NavBar/NavBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docstation/frontend/src/components/Termine/Termine.js" beforeDir="false" afterPath="$PROJECT_DIR$/docstation/frontend/src/components/Termine/Termine.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docstation/frontend/src/firebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/docstation/frontend/src/firebase.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,7 +17,29 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docstation/frontend/src/components/NavBar/NavBar.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="594">
+              <caret line="104" column="18" selection-start-line="104" selection-start-column="18" selection-end-line="104" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/docstation/frontend/src/components/NavBar/NavBar.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="128" column="48" selection-start-line="128" selection-start-column="48" selection-end-line="128" selection-end-column="48" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -54,16 +68,16 @@
         <option value="$PROJECT_DIR$/docstation/frontend/src/AppRouter.js" />
         <option value="$PROJECT_DIR$/docstation/frontend/src/firebase.js" />
         <option value="$PROJECT_DIR$/docstation/frontend/src/App.js" />
+        <option value="$PROJECT_DIR$/docstation/frontend/src/components/Auth.js" />
         <option value="$PROJECT_DIR$/docstation/frontend/src/components/NavBar/NavBar.css" />
         <option value="$PROJECT_DIR$/docstation/frontend/src/components/NavBar/NavBar.js" />
-        <option value="$PROJECT_DIR$/docstation/frontend/src/components/Auth.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="width" value="978" />
-    <option name="height" value="1039" />
+    <option name="x" value="-10" />
+    <option name="width" value="980" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -102,6 +116,15 @@
               <item name="frontend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project-wt-18-16-docstation" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project-wt-18-16-docstation" type="462c0819:PsiDirectoryNode" />
+              <item name="docstation" type="462c0819:PsiDirectoryNode" />
+              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="NavBar" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -185,7 +208,10 @@
       <workItem from="1551964802278" duration="8886000" />
       <workItem from="1551984270530" duration="10360000" />
       <workItem from="1552040471127" duration="3362000" />
-      <workItem from="1552049845641" duration="11499000" />
+      <workItem from="1552049845641" duration="11623000" />
+      <workItem from="1552082330580" duration="173000" />
+      <workItem from="1552122381139" duration="16000" />
+      <workItem from="1552124192259" duration="7365000" />
     </task>
     <task id="LOCAL-00001" summary="Split into frontend and backend and add Express">
       <created>1551452637539</created>
@@ -208,16 +234,24 @@
       <option name="project" value="LOCAL" />
       <updated>1551454347792</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add login/logout functionality to Navbar">
+      <created>1552062061110</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1552062061110</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65460000" />
+    <option name="totallyTimeSpent" value="73138000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12888302" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1850628" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="TypeScript" order="0" />
@@ -229,9 +263,9 @@
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="9" visible="true" weight="0.32258064" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49966952" weight="0.32258064" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.24059139" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.3293011" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50033045" side_tool="true" weight="0.32258064" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3293011" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -325,30 +359,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docstation/frontend/src/firebase.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="22" column="48" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docstation/frontend/src/components/NavBar/NavBar.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="72" column="23" selection-start-line="72" selection-start-column="23" selection-end-line="72" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docstation/frontend/src/components/NavBar/NavBar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1718">
-          <caret line="126" column="56" lean-forward="true" selection-start-line="126" selection-start-column="56" selection-end-line="126" selection-end-column="56" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/docstation/frontend/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="558">
@@ -378,9 +388,21 @@
     <entry file="file://$PROJECT_DIR$/docstation/frontend/src/App.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/docstation/frontend/src/index.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docstation/frontend/src/DisionDialoge.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/docstation/frontend/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
+        <state relative-caret-position="144">
           <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
@@ -388,12 +410,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/docstation/frontend/src/firebase.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="22" column="49" selection-start-line="22" selection-start-column="49" selection-end-line="22" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/docstation/frontend/src/components/Auth.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="18" lean-forward="true" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+        <state relative-caret-position="416">
+          <caret line="26" column="19" lean-forward="true" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docstation/frontend/src/components/NavBar/NavBar.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="104" column="18" selection-start-line="104" selection-start-column="18" selection-end-line="104" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docstation/frontend/src/components/NavBar/NavBar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="128" column="48" selection-start-line="128" selection-start-column="48" selection-end-line="128" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>

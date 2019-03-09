@@ -100,3 +100,7 @@
     background: none;
     cursor: pointer;
 }
+
+.hide {
+    display: none;
+}

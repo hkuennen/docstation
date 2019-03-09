@@ -8,17 +8,31 @@ import { faUserMd } from '@fortawesome/free-solid-svg-icons';
 import { faCalendar } from '@fortawesome/free-solid-svg-icons'
 import { firebase, googleAuthProvider } from "../../firebase";
 import "./NavBar.css";
-import Auth from '../../components/Auth';
+
+let profilePic = document.querySelector('#profilePic');
+let loginBtn = document.querySelector('#loginBtn');
+
 
 class NavBar extends React.Component {
   constructor() {
     super();
     this.state = {
-      dropdownShown: false
+      dropdownShown: false,
+      isSignedIn: false,
+      imgsrc: ""
     };
     this.showMenu = this.showMenu.bind(this);
     this.closeMenu = this.closeMenu.bind(this);
   }
+
+  componentDidMount () {
+    return firebase.auth().onAuthStateChanged(user => {
+          this.setState({isSignedIn: !!user});
+          console.log("user", user);
+          this.setState({imgsrc: user.photoURL});
+        }
+    )
+  };
 
   showMenu(e) {
     e.preventDefault();
@@ -42,8 +56,10 @@ class NavBar extends React.Component {
   startLogin () {
     return firebase.auth().signInWithPopup(googleAuthProvider).then(function (result) {
       console.log(result.user.displayName);
-      let profilePic = document.querySelector('#profilePic');
       profilePic.src = result.user.photoURL;
+      profilePic.classList.toggle('hide');
+      loginBtn.classList.toggle('hide');
+      this.state.isSignedIn = true;
     }).catch(function(error) {
       let errorMessage = error.message;
       console.log(errorMessage);
@@ -52,8 +68,10 @@ class NavBar extends React.Component {
 
 startLogout () {
     return firebase.auth().signOut().then(function () {
-      let profilePic = document.querySelector('#profilePic');
       profilePic.src = img;
+      profilePic.classList.toggle("hide");
+      loginBtn.classList.toggle('hide');
+      this.state.isSignedIn = false;
     }).catch(function (error) {
       console.log(error);
     });
@@ -97,22 +115,28 @@ startLogout () {
                 </a>
               </li>
             </ul>
-            <Auth />
+            <div>
+              {this.state.isSignedIn ? (<div>Signed in as {firebase.auth().currentUser.displayName}</div>
+              ) : (
+                  <div>Please log in</div>
+              )}
+            </div>
             <ul className="navbar-nav ml-auto">
-              <li className="nav-item">
-                <button className="nav-link no-style" onClick={this.startLogin}><FontAwesomeIcon icon={faSignInAlt} className="icon"/>&nbsp;&nbsp;Login</button>
+              {this.state.isSignedIn ? (<li id="userAccount" className="nav-item">
+                    <button className="dropdownBtn" onClick={this.showMenu}>
+                      <img
+                          id="profilePic"
+                          src={this.state.imgsrc}
+                          className="rounded-circle"
+                          alt="profile"
+                          width="40"
+                          height="40"
+                      />
+                    </button>
               </li>
-              <li id="userAccount" className="nav-item">
-                <button className="dropdownBtn" onClick={this.showMenu}>
-                  <img
-                      id="profilePic"
-                    src={img}
-                    className="rounded-circle"
-                    alt="profile"
-                    width="40"
-                    height="40"
-                  />
-                </button>
+              ) : null}
+              <li className="nav-item">
+                {this.state.isSignedIn ? null : (<button id="loginBtn" className="nav-link no-style" onClick={this.startLogin}><FontAwesomeIcon icon={faSignInAlt} className="icon"/>&nbsp;&nbsp;Login</button>)}
               </li>
             </ul>
           </div>
