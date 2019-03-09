@@ -1,6 +1,5 @@
 import React from "react";
 import img from "../../assets/profilepicture.jpg";
-import {NavLink} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignInAlt, faUser } from '@fortawesome/free-solid-svg-icons';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
@@ -45,11 +44,13 @@ class NavBar extends React.Component {
   }
 
   closeMenu(e){
+    if(!this.dropdownMenu.contains(e.target)){
       this.setState({
         dropdownShown: false
       },() => {
         document.removeEventListener('click', this.closeMenu);
       });
+    }
   }
 
   startLogin () {
@@ -99,19 +100,19 @@ startLogout () {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item active ">
-                <NavLink className="nav-link" to="/">
+                <a className="nav-link" href="www.google.de">
                 <FontAwesomeIcon icon={faUserMd} className="icon"/>&nbsp;&nbsp;Home
-                </NavLink>
+                </a>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/termine">
+                <a className="nav-link" href="/termine">
                 <FontAwesomeIcon icon={faCalendar} className="icon"/>&nbsp;&nbsp;Termine
-                </NavLink>
+                </a>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/settings">
+                <a className="nav-link" href="/termine">
                 <FontAwesomeIcon icon={faCog} className="icon"/>&nbsp;&nbsp;Einstellungen
-                </NavLink>
+                </a>
               </li>
             </ul>
             <div>
@@ -144,10 +145,10 @@ startLogout () {
           <ul className="nav flex-column dropdown" ref={(e)=>{
             this.dropdownMenu = e;}}>
           <li className="nav-item">
-          <NavLink className="nav-link active dropDownBtn no-style" to="/profil"><FontAwesomeIcon icon={faUser} className="icon"/>&nbsp;&nbsp;Profil</NavLink>
+          <a className="nav-link active dropDownBtn no-style"><FontAwesomeIcon icon={faUser} className="icon"/>&nbsp;&nbsp;Profil</a>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link dropDownBtn no-style" to="/settings"><FontAwesomeIcon icon={faCog} className="icon"/>&nbsp;&nbsp;Einstellungen</NavLink>
+            <a className="nav-link dropDownBtn no-style"><FontAwesomeIcon icon={faCog} className="icon"/>&nbsp;&nbsp;Einstellungen</a>
           </li>
           <li className="nav-item">
             <button className="nav-link dropDownBtn no-style" onClick={this.startLogout}><FontAwesomeIcon icon={faSignOutAlt} className="icon"/>&nbsp;&nbsp;Logout</button>
