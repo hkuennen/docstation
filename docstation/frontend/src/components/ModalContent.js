@@ -45,7 +45,7 @@ class ModalContent extends Component {
         </div>
         <div className="row">
           <form>
-          <input type="text" placeholder="Title des Termins" ref={this.titleRef}/>
+          <input type="text" placeholder="Titel des Termins" ref={this.titleRef}/>
           </form>
           <label></label>
         </div>
@@ -77,7 +77,10 @@ function saveTermin(d, t, u){
   const newTerminRef = terminRef.push();
   newTerminRef.set({
     title: t,
-    date: d
+    date: {
+      start: d[0].toString(),
+      ende: d[1].toString()
+    }
     });  
 };
 
