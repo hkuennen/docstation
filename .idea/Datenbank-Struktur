@@ -1,0 +1,14 @@
+Datenbank
+    USER
+        User1
+            Name
+            Termine
+                TID
+                    Titel
+                    Datum + Uhrzeit
+        User2
+        ...
+    TIPPS
+        Tipp1
+        Tipp2
+        ...

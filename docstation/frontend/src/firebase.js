@@ -1,4 +1,3 @@
-import React from 'react';
 const firebase = require('firebase');
 
 const config = {
@@ -18,6 +17,5 @@ const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 googleAuthProvider.addScope('profile');
 googleAuthProvider.addScope('email');
 googleAuthProvider.addScope('https://www.googleapis.com/auth/plus.me');
-
 
 export { firebase, googleAuthProvider, database }
