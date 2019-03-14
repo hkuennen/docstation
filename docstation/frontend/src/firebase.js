@@ -19,5 +19,27 @@ googleAuthProvider.addScope('profile');
 googleAuthProvider.addScope('email');
 googleAuthProvider.addScope('https://www.googleapis.com/auth/plus.me');
 
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+        database.ref('users/' + user.uid + '/uid').once('value')
+            .then(function (snapshot) {
+                if (snapshot.val() === user.uid) {
+                    console.log('User already exists');
+                } else {
+                    console.log(snapshot.val());
+                    database.ref('users/' + user.uid).set({
+                        uid: user.uid,
+                        name: user.displayName
+                    });
+                }
+            })
+            .catch( function (e) {
+                console.log("Error fetching data", e)
+            });
+    } else {
+        console.log("There's no user logged in.")
+    }
+});
+
 
 export { firebase, googleAuthProvider, database }

@@ -15,8 +15,9 @@ class ModalContent extends Component {
 
   pushDate = e => {
     e.preventDefault();
-    //Den aktuellen State kopoeren
+    //Den aktuellen State kopieren
     const dates = {...this.state.date};
+
     //Den Title des Events hinzufügen
     const title = this.titleRef.current.value;
     //Den State zum höheren Komponenten pushen
@@ -35,7 +36,7 @@ class ModalContent extends Component {
         </div>
         <div className="row">
           <form>
-          <input type="text" placeholder="Title des Termins" ref={this.titleRef}/>
+          <input type="text" placeholder="Titel des Termins" ref={this.titleRef}/>
           </form>
           <label></label>
         </div>

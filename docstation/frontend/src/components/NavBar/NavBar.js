@@ -12,7 +12,6 @@ import "./NavBar.css";
 let profilePic = document.querySelector('#profilePic');
 let loginBtn = document.querySelector('#loginBtn');
 
-
 class NavBar extends React.Component {
   constructor() {
     super();
@@ -69,7 +68,7 @@ class NavBar extends React.Component {
 startLogout () {
     return firebase.auth().signOut().then(function () {
       profilePic.src = img;
-      profilePic.classList.toggle("hide");
+      profilePic.classList.toggle('hide');
       loginBtn.classList.toggle('hide');
       this.state.isSignedIn = false;
     }).catch(function (error) {
