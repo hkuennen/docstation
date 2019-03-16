@@ -3,6 +3,7 @@ import DateTimeRangePicker from "@wojtekmaj/react-datetimerange-picker";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSave } from '@fortawesome/free-solid-svg-icons'
 import '../App.css';
+import {firebase} from '../firebase.js';
 
 class ModalContent extends Component {
   state = {
@@ -23,6 +24,15 @@ class ModalContent extends Component {
     //Den State zum höheren Komponenten pushen
     this.props.pushDate(dates,title);
     console.log(dates);
+
+    //Speicherung des Termins in Firebase
+    firebase.auth().onAuthStateChanged(function(user){
+      if(user){
+        saveTermin(dates, title, user);
+      }else{
+        console.log('Es ist niemand eingeloggt');
+      }
+    });
   }
   
   render() {
@@ -57,5 +67,22 @@ class ModalContent extends Component {
     );
   }
 }
+
+//Get Reference to our users
+
+//Reference User collection
+
+function saveTermin(d, t, u){
+  //Speichere Termin in Firebase
+  const terminRef = firebase.database().ref('users/'+ u.uid +'/termine');
+  const newTerminRef = terminRef.push();
+  newTerminRef.set({
+    title: t,
+    date: {
+      start: d[0].toString(),
+      ende: d[1].toString()
+    }
+    });  
+};
 
 export default ModalContent;

@@ -1,4 +1,3 @@
-import React from 'react';
 const firebase = require('firebase');
 
 const config = {
@@ -40,6 +39,5 @@ firebase.auth().onAuthStateChanged(function(user) {
         console.log("There's no user logged in.")
     }
 });
-
 
 export { firebase, googleAuthProvider, database }
