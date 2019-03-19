@@ -47,34 +47,53 @@ class DocsCalendar extends Component {
         end: this.props.event[1],
         title: this.props.title
       }
-      if(JSON.stringify(newEvent) === JSON.stringify(this.state.events[this.state.events.length -1])){
-        console.log("doppelt");
-      } else {
-       this.state.events.push(newEvent);
+      var boolCheck = false;;
+      for (let i = 0; i < this.state.events.length; i++) {
+        var tempObj = {start:this.state.events[i].start,end:this.state.events[i].end,title:this.state.events[i].title}
+        if(JSON.stringify(newEvent) === JSON.stringify(tempObj)){
+          console.log("doppelt");
+          boolCheck = true;
+          break;
+        }
       }
-    } 
+      if(boolCheck === false){
+        //this.state.events.push(newEvent);
+      }
+    } */
   }
 
-  onOpenModal = () => {
+  onOpenModal = (event) => {
     this.setState({ open: true,
-      isUpdated: false
+      isUpdated: false, activeEintrag: event
      });
   };
 
   onCloseModal = () => {
-    this.setState({ open: false });
+    this.setState({ open: false, activeEintrag:""});
   };
 
-
-  onSelectEvent() {
-    this.onOpenModal();
+  onSelectEvent = (event) => {
+    this.onOpenModal(event);
+    console.log(event);
+    console.log(this);
   }
 
   deleteEvent = pEvent => {
     this.setState((prevState, props) => {
-      const events = [...prevState.events]
-      const idx = events.indexOf(pEvent)
-      events.splice(idx, 1);
+      var events = [...prevState.events];
+      var j;
+      for (let i = 0; i < events.length; i++) {
+        if(events[i].id !== this.state.activeEintrag.id){
+        }else{
+          j = i;
+          var user = firebase.auth().currentUser;
+          if (user) {
+            var ref = firebase.database().ref('users/'+ user.uid + "/termine");
+            ref.child(events[i].id).remove();
+          }
+        }
+      }
+      events.splice(j,1);
       return { events };
     });
     this.onCloseModal();
