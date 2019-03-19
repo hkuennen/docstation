@@ -4,22 +4,43 @@ import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import Modal from "react-responsive-modal";
 import DecisionDialog from '../DisionDialoge';
+import {firebase, GoogleAuthProvider} from '../firebase';
 
 const localizer = Calendar.momentLocalizer(moment);
 
 class DocsCalendar extends Component {
   state = {
-    events: [
-      {
-        start: new Date(),
-        end: new Date(moment()),
-        title: "Sprint Planning"
-      }
-    ]
+     events: []
   };
+  
+  //Getting the 'termine' from the logged-in user
+  componentDidMount(){
+    return firebase.auth().onAuthStateChanged(user => {
+      if(user){
+        //retrieve the logged in users dates
+        var ref = firebase.database().ref('users/'+ user.uid + "/termine");
+        ref.on("child_added", snap => {
+          var eintragId = snap.ref.path.pieces_[3];
+          var title = snap.child("title").val();
+          var start = snap.child("date/start").val();
+          var ende = snap.child("date/ende").val();
+          let termin = {start: new Date(start), end: new Date(ende), title: title, id: eintragId};
+          this.setState({
+            events:[...this.state.events, termin],
+          });
+          console.log("Title: " + title + "   Startzeit: " +  start + "   Endzeit: " + ende);
+          console.log(this.state);
+          this.forceUpdate();
+        });
+      }else{
+        console.log('Termine konnten nicht abgerufen werden');
+      }
+    }
+)
+  }
 
   componentDidUpdate(){
-    //Wenn der Title string leer ist, wird kein neues Event erstellt. 
+    /*//Wenn der Title string leer ist, wird kein neues Event erstellt. 
     if(this.props.title  !== "" ){
       const newEvent = {
         start: this.props.event[0],
