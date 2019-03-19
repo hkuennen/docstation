@@ -59,7 +59,7 @@ class App extends Component {
                                 <span className="logo-sm-left">Doc</span>
                                 <span className="logo-sm-right">Station</span>
                             </p>
-                            <h3 className="calendar-title">Termin Kalendar</h3>
+                            <h3 className="calendar-title">Termin Kalender</h3>
                             <DocsCalendar
                                 event={this.state.termine}
                                 title={this.state.title}

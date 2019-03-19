@@ -79,8 +79,8 @@ function saveTermin(d, t, u){
   newTerminRef.set({
     title: t,
     date: {
-      start: d[0].toString(),
-      ende: d[1].toString()
+      start: d[0].getTime(),
+      ende: d[1].getTime()
     }
     });  
 };
