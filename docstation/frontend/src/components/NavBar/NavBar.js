@@ -7,6 +7,7 @@ import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { faUserMd } from '@fortawesome/free-solid-svg-icons';
 import { faCalendar } from '@fortawesome/free-solid-svg-icons'
 import { firebase, googleAuthProvider } from "../../firebase";
+import {NavLink} from 'react-router-dom';
 import "./NavBar.css";
 
 let profilePic = document.querySelector('#profilePic');
@@ -99,19 +100,19 @@ startLogout () {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item active ">
-                <a className="nav-link" href="www.google.de">
+                <NavLink className="nav-link" to="/home">
                 <FontAwesomeIcon icon={faUserMd} className="icon"/>&nbsp;&nbsp;Home
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/termine">
+                <NavLink className="nav-link" to="/termine">
                 <FontAwesomeIcon icon={faCalendar} className="icon"/>&nbsp;&nbsp;Termine
-                </a>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/termine">
+                <NavLink className="nav-link" to="/einstellungen">
                 <FontAwesomeIcon icon={faCog} className="icon"/>&nbsp;&nbsp;Einstellungen
-                </a>
+                </NavLink>
               </li>
             </ul>
             <div>

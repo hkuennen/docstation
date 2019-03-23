@@ -10,102 +10,83 @@ import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import "./App.css";
 
 class App extends Component {
-    constructor(props) {
-        super(props);
-        this.pushDate = this.pushDate.bind(this);
-    }
+  constructor(props) {
+    super(props);
+    this.pushDate = this.pushDate.bind(this);
+  }
 
-    state = {
-        open: false,
-        termine: {},
-        title: ""
-    };
+  state = {
+    open: false,
+    termine: {},
+    title: "",
+    isSignedIn: true
+  };
 
-    onOpenModal = () => {
-        this.setState({ open: true });
-    };
+  onOpenModal = () => {
+    this.setState({ open: true });
+  };
 
-    onCloseModal = () => {
-        this.setState({ open: false });
-    };
+  onCloseModal = () => {
+    this.setState({ open: false });
+  };
 
-    pushDate = (dates, title) => {
-        this.onCloseModal();
-        this.setState({
-            termine: dates,
-            title: title
-        });
-    };
+  pushDate = (dates, title) => {
+    this.onCloseModal();
+    this.setState({
+      termine: dates,
+      title: title
+    });
+  };
 
-    render() {
-        return (
-            <div className="App">
-                <NavBar />
-                <div className="container-fluid">
-                    <div className="row">
-                        <div className="col">
-                            <div className="card card-events">
-                                <h3 className="events-title">Ihre nächsten Termine</h3>
-                                <Termine name="Al Albert" termin="Allgemeine Untersuchung" />
-                                <Termine name="Pav Pavlow" termin="Darmspieglung" />
-                                <Termine
-                                    name="Satoshi Nakamoto"
-                                    termin="Allgemeine Untersuchung"
-                                />
-                            </div>
-                        </div>
-                        <div className="col calendar-container">
-                            <p className="logo-sm">
-                                <span className="logo-sm-left">Doc</span>
-                                <span className="logo-sm-right">Station</span>
-                            </p>
-                            <h3 className="calendar-title">Termin Kalender</h3>
-                            <DocsCalendar
-                                event={this.state.termine}
-                                title={this.state.title}
-                                isUpdated={this.state.isUpdated}
-                                wasUpdated={this.wasUpdated}
-                            />
-                            <button
-                                type="button"
-                                className="btn btn-outline-primary mt-4"
-                                onClick={this.onOpenModal}
-                            >
-                                <FontAwesomeIcon icon={faPlusCircle} />
-                                &nbsp;&nbsp;Termin hinzufügen
-                            </button>
-                        </div>
-                        <div className="col">
-                            <Post
-                                title="Der Wasser-Tag"
-                                subtitle="Ersetzen Sie Softdrinks"
-                                text="Nutzen Sie die Kraft des Wasser und verzichten sie auf Softdrinks. Diese tun Ihrer Gesundheit..."
-                            />
-                            <Post
-                                title="Der Waschbrett-Tag"
-                                subtitle="Trainieren Sie die Bauchmuskeln"
-                                text="Machen Sie nach Ihrem 5-Minuten-Sportprogramm ein paar Käfer-Durchgänge, um die Entwicklung Ihres..."
-                            />
-                            <Post
-                                title="Der Bade-Tag"
-                                subtitle="Baden sorgt für Entspannung"
-                                text="Nehmen Sie heute ein entspannendes heisses Bad mit einem basischen Badesalz. Sie können dazu auch..."
-                            />
-
-                        </div>
-                    </div>
-                </div>
-                <Modal open={this.state.open} onClose={this.onCloseModal} center>
-                    <ModalContent
-                        onCloseModal={this.onCloseModal}
-                        pushDate={this.pushDate}
-                    />
-                </Modal>
+  render() {
+    return (
+      <div className="App">
+        <NavBar />
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col">
+              <div className="card card-events">
+                <h3 className="events-title">Ihre nächsten Termine</h3>
+                <Termine name="Al Albert" termin="Allgemeine Untersuchung" />
+                <Termine name="Pav Pavlow" termin="Darmspieglung" />
+                <Termine
+                  name="Satoshi Nakamoto"
+                  termin="Allgemeine Untersuchung"
+                />
+              </div>
             </div>
-        );
-    }
+            <div className="col calendar-container">
+              <p className="logo-sm">
+                <span className="logo-sm-left">Doc</span>
+                <span className="logo-sm-right">Station</span>
+              </p>
+              <h3 className="calendar-title">Termin Kalender</h3>
+              <DocsCalendar
+                event={this.state.termine}
+                title={this.state.title}
+                isUpdated={this.state.isUpdated}
+                wasUpdated={this.wasUpdated}
+              />
+              <button
+                type="button"
+                className="btn btn-outline-primary mt-4"
+                onClick={this.onOpenModal}
+              >
+                <FontAwesomeIcon icon={faPlusCircle} />
+                &nbsp;&nbsp;Termin hinzufügen
+              </button>
+            </div>
+          </div>
+        </div>
+        <Modal open={this.state.open} onClose={this.onCloseModal} center>
+          <ModalContent
+            onCloseModal={this.onCloseModal}
+            pushDate={this.pushDate}
+          />
+        </Modal>
+      </div>
+    );
+  }
 }
 
 export default App;
-
-
