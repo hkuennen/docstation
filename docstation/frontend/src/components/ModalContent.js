@@ -11,6 +11,7 @@ class ModalContent extends Component {
   };
 
   titleRef = React.createRef();
+  nameRef = React.createRef();
 
   onChange = date => this.setState({ date });
 
@@ -21,14 +22,18 @@ class ModalContent extends Component {
 
     //Den Title des Events hinzufügen
     const title = this.titleRef.current.value;
+
+    //Den Namen des Patienten hinzufügen
+    const name = this.nameRef.current.value;
+
     //Den State zum höheren Komponenten pushen
-    this.props.pushDate(dates,title);
+    this.props.pushDate(dates,title, name);
     console.log(dates);
 
     //Speicherung des Termins in Firebase
     firebase.auth().onAuthStateChanged(function(user){
       if(user){
-        saveTermin(dates, title, user);
+        saveTermin(dates, title, name, user);
       }else{
         console.log('Es ist niemand eingeloggt');
       }
@@ -47,6 +52,12 @@ class ModalContent extends Component {
         <div className="row">
           <form>
           <input type="text" placeholder="Titel des Termins" ref={this.titleRef}/>
+          </form>
+          <label></label>
+        </div>
+        <div className="row">
+          <form>
+          <input type="text" placeholder="Name des Patienten" ref={this.nameRef}/>
           </form>
           <label></label>
         </div>
@@ -72,12 +83,13 @@ class ModalContent extends Component {
 
 //Reference User collection
 
-function saveTermin(d, t, u){
+function saveTermin(d, t, n, u){
   //Speichere Termin in Firebase
   const terminRef = firebase.database().ref('users/'+ u.uid +'/termine');
   const newTerminRef = terminRef.push();
   newTerminRef.set({
     title: t,
+    name: n,
     date: {
       start: d[0].getTime(),
       ende: d[1].getTime()

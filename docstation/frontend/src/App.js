@@ -5,6 +5,7 @@ import ModalContent from "./components/ModalContent";
 import Post from "./components/Post/Post";
 import Modal from "react-responsive-modal";
 import Termine from "./components/Termine/Termine";
+import {firebase, GoogleAuthProvider} from './firebase';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import "./App.css";
@@ -19,6 +20,7 @@ class App extends Component {
     open: false,
     termine: {},
     title: "",
+    name:"",
     isSignedIn: true
   };
 
@@ -38,6 +40,27 @@ class App extends Component {
     });
   };
 
+  titleRef = React.createRef();
+  nameRef = React.createRef();
+
+  componentDidMount(){
+    firebase.auth().onAuthStateChanged(user => {
+      if(user){
+        //retrieve the logged in users dates
+        var ref = firebase.database().ref('users/'+ user.uid + "/termine");
+        ref.on("child_added", snap => {
+          //var eintragId = snap.ref.path.pieces_[3];
+          var title = snap.child("title").val();
+          var name = snap.child("name").val();
+          //console.log("ICH BIN DER NAME " + name + "UND ICH BIN DER TITEL" + title);
+          this.setState({title:title, name:name});
+        });
+      }else{
+        console.log('Termine konnten nicht abgerufen werden');
+      }
+    }
+  )};
+
   render() {
     return (
       <div className="App">
@@ -47,7 +70,7 @@ class App extends Component {
             <div className="col">
               <div className="card card-events">
                 <h3 className="events-title">Ihre nächsten Termine</h3>
-                <Termine name="Al Albert" termin="Allgemeine Untersuchung" />
+                <Termine name={this.state.title} termin={this.state.name} />
                 <Termine name="Pav Pavlow" termin="Darmspieglung" />
                 <Termine
                   name="Satoshi Nakamoto"
