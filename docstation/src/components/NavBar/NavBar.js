@@ -29,7 +29,7 @@ class NavBar extends React.Component {
     return firebase.auth().onAuthStateChanged(user => {
           this.setState({isSignedIn: !!user});
           console.log("user", user);
-          this.setState({imgsrc: user.photoURL});
+          user ? this.setState({imgsrc: user.photoURL}) : this.setState({imgsrc: img});
         }
     )
   };
