@@ -52,14 +52,18 @@ class App extends Component {
           var eintragId = snap.ref.path.pieces_[3];
           var title = snap.child("title").val();
           var name = snap.child("name").val();
+          var start = snap.child("/date/start").val()
           var termin = {
             id: eintragId,
             name: name,
-            title: title
+            title: title,
+            start: start,
           }
           ref.child("users").child(user.uid).orderByChild("/termine/date/start");
           this.setState({
-            list: this.state.list.concat(termin)
+            list: this.state.list.concat(termin).sort(function(a,b){
+              return a.start > b.start;
+            })
           });
           //console.log("ICH BIN DER NAME " + name + "UND ICH BIN DER TITEL" + title);      
           console.log(this.state.list);
