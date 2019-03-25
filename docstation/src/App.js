@@ -10,10 +10,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import "./App.css";
 
+
 class App extends Component {
   constructor(props) {
     super(props);
     this.pushDate = this.pushDate.bind(this);
+    this.state = {
+      value: '',
+      list: [],
+    };
   }
 
   state = {
@@ -40,20 +45,25 @@ class App extends Component {
     });
   };
 
-  titleRef = React.createRef();
-  nameRef = React.createRef();
-
   componentDidMount(){
     firebase.auth().onAuthStateChanged(user => {
       if(user){
         //retrieve the logged in users dates
         var ref = firebase.database().ref('users/'+ user.uid + "/termine");
         ref.on("child_added", snap => {
-          //var eintragId = snap.ref.path.pieces_[3];
+          var eintragId = snap.ref.path.pieces_[3];
           var title = snap.child("title").val();
           var name = snap.child("name").val();
-          //console.log("ICH BIN DER NAME " + name + "UND ICH BIN DER TITEL" + title);
-          this.setState({title:title, name:name});
+          var termin = {
+            id: eintragId,
+            name: name,
+            title: title
+          }
+          this.setState(state => {
+            state.list.push(termin);
+          });
+          //console.log("ICH BIN DER NAME " + name + "UND ICH BIN DER TITEL" + title);      
+          console.log(this.state.list);
         });
       }else{
         console.log('Termine konnten nicht abgerufen werden');
@@ -70,12 +80,13 @@ class App extends Component {
             <div className="col">
               <div className="card card-events">
                 <h3 className="events-title">Ihre nächsten Termine</h3>
-                <Termine name={this.state.title} termin={this.state.name} />
-                <Termine name="Pav Pavlow" termin="Darmspieglung" />
-                <Termine
-                  name="Satoshi Nakamoto"
-                  termin="Allgemeine Untersuchung"
-                />
+                <ul>
+                  {this.state.list.map(({id,name, title}) => {
+                    return(
+                      <p key={id}>{name - title}</p>
+                    )
+                  })}
+                </ul>
               </div>
             </div>
             <div className="col calendar-container">

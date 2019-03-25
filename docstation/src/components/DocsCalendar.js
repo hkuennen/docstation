@@ -28,8 +28,8 @@ class DocsCalendar extends Component {
           this.setState({
             events:[...this.state.events, termin],
           });
-          console.log("Title: " + title + "   Startzeit: " +  start + "   Endzeit: " + ende);
-          console.log(this.state);
+          // console.log("Title: " + title + "   Startzeit: " +  start + "   Endzeit: " + ende);
+          // console.log(this.state);
           this.forceUpdate();
         });
       }else{
