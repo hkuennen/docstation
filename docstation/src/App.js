@@ -15,10 +15,6 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.pushDate = this.pushDate.bind(this);
-    this.state = {
-      value: '',
-      list: [],
-    };
   }
 
   state = {
@@ -26,7 +22,8 @@ class App extends Component {
     termine: {},
     title: "",
     name:"",
-    isSignedIn: true
+    isSignedIn: true,
+    list: []
   };
 
   onOpenModal = () => {
@@ -45,11 +42,12 @@ class App extends Component {
     });
   };
 
-  componentDidMount(){
+  componentDidMount() {
     firebase.auth().onAuthStateChanged(user => {
       if(user){
         //retrieve the logged in users dates
         var ref = firebase.database().ref('users/'+ user.uid + "/termine");
+        ref.child("users").child("/termine").orderByChild("start");
         ref.on("child_added", snap => {
           var eintragId = snap.ref.path.pieces_[3];
           var title = snap.child("title").val();
@@ -59,6 +57,7 @@ class App extends Component {
             name: name,
             title: title
           }
+          ref.child("users").child(user.uid).orderByChild("/termine/date/start");
           this.setState(state => {
             state.list.push(termin);
           });
@@ -80,11 +79,13 @@ class App extends Component {
             <div className="col">
               <div className="card card-events">
                 <h3 className="events-title">Ihre nächsten Termine</h3>
-                <ul>
-                  {this.state.list.map(({id,name, title}) => {
-                    return(
-                      <p key={id}>{name - title}</p>
-                    )
+                <ul id="listeTermine">
+                {
+                  this.state.list.map(function(terminliste){
+                    return [
+                    <li key={terminliste.id}><Termine name={terminliste.name} termin={terminliste.title}></Termine> </li>,
+                    <p></p>
+                    ];
                   })}
                 </ul>
               </div>
