@@ -58,8 +58,8 @@ class App extends Component {
             title: title
           }
           ref.child("users").child(user.uid).orderByChild("/termine/date/start");
-          this.setState(state => {
-            state.list.push(termin);
+          this.setState({
+            list: this.state.list.concat(termin)
           });
           //console.log("ICH BIN DER NAME " + name + "UND ICH BIN DER TITEL" + title);      
           console.log(this.state.list);
