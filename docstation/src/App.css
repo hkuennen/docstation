@@ -140,3 +140,7 @@ h5{
 .text-input{
   width: 80% !important;
 }
+
+#listeTermine{
+  list-style-type: none;
+};

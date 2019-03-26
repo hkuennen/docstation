@@ -47,7 +47,6 @@ class App extends Component {
       if(user){
         //retrieve the logged in users dates
         var ref = firebase.database().ref('users/'+ user.uid + "/termine");
-        ref.child("users").child("/termine").orderByChild("start");
         ref.on("child_added", snap => {
           var eintragId = snap.ref.path.pieces_[3];
           var title = snap.child("title").val();
